@@ -1,0 +1,52 @@
+{
+  "name": "Another Bradley Project",
+  "version": "1.0.0",
+  "description": "Some project by Bradley.",
+  "author": {
+    "name": "Bradley Staples",
+    "email": "the.bradley.staples@gmail.com",
+    "url": "http://bradleystapl.es"
+  },
+  "homepage": "http://bradleystapl.es/",
+  "main": "./bin/www",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "cookie-parser": "^1.3.5",
+    "debug": "^2.2.0",
+    "express": "^4.13.3",
+    "flipclock": "^0.7.8",
+    "jade": "^1.11.0",
+    "jquery": "^2.1.4",
+    "moment": "^2.10.6",
+    "morgan": "^1.6.1",
+    "serve-favicon": "^2.3.0"
+  },
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-if": "^1.2.5",
+    "gulp-jade": "*",
+    "gulp-jscs": "^2.0.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-nodemon": "^2.0.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-useref": "^1.3.0",
+    "gulp-util": "^3.0.6",
+    "jscs": "^2.1.1",
+    "node-sass": "^3.3.3",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "preferGlobal": false,
+  "private": true,
+  "license": "MIT"
+}

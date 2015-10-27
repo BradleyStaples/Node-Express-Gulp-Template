@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    .page
+        h1.center
+            a(href='/') Site Name
+        h2.errorShrug.center ¯\_(ツ)_/¯
+        if error
+            h3.center Error #{error.status}
+        if message
+            h3.center=message
+
+        p.center Something went wrong. Was it you? Maybe me? Alright, let's call it a draw.
+            br
+            span (It was probably me. Sorry about that.)

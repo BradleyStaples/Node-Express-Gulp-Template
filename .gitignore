@@ -1,0 +1,6 @@
+*.log
+.DS_Store
+.sass-cache
+resizive.sublime-project
+resizive.sublime-workspace
+node_modules

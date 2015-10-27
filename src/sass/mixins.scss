@@ -1,0 +1,70 @@
+$breakpoints: (
+    mobile_portrait_width: 320px,
+    iphone_6_portrait_width: 375px,
+    iphone_6_plus_portrait_width: 414px,
+    mobile_landscape_width: 480px,
+    mobile_iphone5_landscape_width: 568px,
+    tablet_generic_portrait_width: 600px,
+    iphone_6_landscape_width: 667px,
+    iphone_6_plus_landscape_width: 736px,
+    tablet_portrait_width: 768px,
+    tablet_generic_landscape_width: 800px,
+    small_desktop: 900px,
+    page_width: 1000px,
+    tablet_landscape_width: 1024px
+);
+
+$directions: (
+    '<': max-width,
+    '<=': max-width,
+    '>': min-width,
+    '>=': min-width,
+    between: between
+);
+
+@function getBreakpointSize($direction, $breakpoint) {
+    $bp: map-get($breakpoints, $breakpoint);
+
+    @if $bp == null {
+        // allow numeric breakpoints values for unusual cases
+        @return $breakpoint;
+    }
+
+    @if $direction == '<' {
+        @return $bp - 1;
+    } @else if $direction == '>' {
+        @return $bp + 1;
+    } @else {
+        @return $bp;
+    }
+}
+
+// directions:
+// under is exclusive, under_or_equal is inclusive with $breakpoing
+// over is exclusive, over_or_equal is inclusive with $breakpoing
+// between is inclusive on both ends
+@mixin responsive($direction, $breakpoint, $breakpoint2: null) {
+    $bp: getBreakpointSize($direction, $breakpoint);
+    $bp2: getBreakpointSize($direction, $breakpoint2);
+    $dir: map-get($directions, $direction);
+
+    @if $dir == null {
+        @warn 'missing direction "#{$direction}"';
+    } @else {
+        @if $dir == 'between' and $bp2 != null {
+            @media only screen and (min-width: $bp) and (max-width: $bp2) {
+                @content;
+            }
+        } @else {
+            @media only screen and ($dir: $bp) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin selection() {
+    text-shadow: $dark_blue 2px 2px 0;
+    background: $light_blue;
+    color: $cream;
+}
