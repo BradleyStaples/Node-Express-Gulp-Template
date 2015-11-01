@@ -1,4 +1,5 @@
-/* globals require*/
+/* global require */
+
 'use strict';
 
-window.jQuery = window.$ = require('jquery');
+window.jQuery = require('jquery');

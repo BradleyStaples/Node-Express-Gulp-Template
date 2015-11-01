@@ -1,4 +1,9 @@
 
 @include responsive('<=', 'mobile_landscape_width') {
-    // contents
+
+
+    body {
+        color: $silver;
+    }
+
 }

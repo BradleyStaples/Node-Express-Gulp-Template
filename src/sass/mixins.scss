@@ -64,7 +64,7 @@ $directions: (
 }
 
 @mixin selection() {
-    text-shadow: $dark_blue 2px 2px 0;
-    background: $light_blue;
-    color: $cream;
+    text-shadow: $black 2px 2px 0;
+    background: $gray;
+    color: $white;
 }
